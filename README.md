@@ -6,7 +6,7 @@ To evaluate our own guides, we´ve built the F1 Season Manager in CodeIgniter 3 
 
 We hope our guides will help you with your own projects. Also you can make use of the F1 Season Manger, to get a better comprehension for all the adjustments you have to do.
 
-**Current Status:** [Pull Request](https://github.com/codeigniter4/CodeIgniter4/pull/4565) to official CodeIgniter Repository
+**Current Status:** [Pull Request](https://github.com/codeigniter4/CodeIgniter4/pull/4565) to official CodeIgniter Repository (soon our guides will be part of the [official documentation](https://codeigniter.com/user_guide/index.html#))
 
 ---
 
