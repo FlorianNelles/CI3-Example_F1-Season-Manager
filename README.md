@@ -6,7 +6,8 @@ To evaluate our own guides, we´ve built the F1 Season Manager in CodeIgniter 3 
 
 We hope our guides will help you with your own projects. Also you can make use of the F1 Season Manger, to get a better comprehension for all the adjustments you have to do.
 
-pull request
+**Current Status:**
+abc
 
 ---
 
@@ -19,4 +20,4 @@ Basically it gives you the opportunity to manage your own F1 Season with the fol
 - user-based driverlist, with your own created and official drivers
 - list of all the teams and some informations about them
 - newspage
-- switch between english and german
+- switch between languages (english and german)
