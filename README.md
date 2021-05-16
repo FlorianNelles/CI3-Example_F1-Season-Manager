@@ -12,7 +12,9 @@ pull request
 
 ## F1 Season Manager
 
-The F1 Season Manager is a simple app, which includes the most important functions and libaries of CodeIgniter. Basically it gives you the opportunity to mange your own F1 Season with the following features:
+The F1 Season Manager is a simple app, which includes the most important functions and libaries of CodeIgniter. 
+
+Basically it gives you the opportunity to mange your own F1 Season with the following features:
 - user registration, login/logout
 - user-based driverlist, with your own created and official drivers
 - list of all the teams and some informations about them
