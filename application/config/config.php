@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'https://codeigniterv3.app';
-$config['base_url'] = 'http://localhost/live_projekt';
+$config['base_url'] = 'http://localhost/live_version3';
 
 /*
 |--------------------------------------------------------------------------
