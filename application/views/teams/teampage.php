@@ -4,7 +4,7 @@
 <h4><?php echo $this->lang->line('teamdriver') ?></h4>
 <?php foreach($drivers as $driver) : ?>
 	<?php if($driver['team_id'] == $team['id']): ?>
-		<?php if($this->session->userdata('user_id') == $driver['user_id'] or $driver['user_id'] == 1): ?>
+		<?php if($_SESSION['user_id'] == $driver['user_id'] or $driver['user_id'] == 1): ?>
 
 			<?php echo $driver['name'];?>
 			<br>
@@ -18,7 +18,7 @@
 <h4><?php echo $this->lang->line('teamengine') ?></h4><?php echo $team['motor']; ?><br><hr>
 <h4><?php echo $this->lang->line('teamplace') ?></h4><?php echo $team['sitz']; ?><br><hr>
 
-<?php if($this->session->userdata('user_id') == 1):?>
+<?php if($_SESSION['user_id'] == 1):?>
 	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
 		<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>

@@ -16,8 +16,8 @@
 			$data['title'] = 'Benutzer erstellen';
 
 			$this->form_validation->set_rules('name', 'Name', 'required');
-			$this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
-			$this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
+			$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
+			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			$this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
 
@@ -85,33 +85,13 @@
 
 
 		public function logout(){
-			$this->session->unset_userdata('logged_in');
-			$this->session->unset_userdata('user_id');
+			$this->session->set_userdata('logged_in', false);
+			$this->session->set_userdata('user_id', 0);
 			$this->session->unset_userdata('username');
 
 			$this->session->set_flashdata('user_loggedout',  $this->lang->line('user_loggedout'));
 
 			redirect('users/login');
-		}
-
-
-
-		//functions for validations, check if .... exists
-		public function check_username_exists($username){
-			$this->form_validation->set_message('check_username_exists', 'Username exists already');
-			if($this->user_model->check_username_exists($username)){
-				return true;
-			} else {
-				return false;
-			}
-		}
-		public function check_email_exists($email){
-			$this->form_validation->set_message('check_email_exists', 'There is already a User with the same Email');
-			if($this->user_model->check_email_exists($email)){
-				return true;
-			} else {
-				return false;
-			}
 		}
 
 	}

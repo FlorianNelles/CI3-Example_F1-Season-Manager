@@ -2,7 +2,7 @@
 
 $lang['title'] = 'Neuigkeiten';
 $lang['create_news'] = 'Neue Nachricht schreiben';
-$lang['creater_name'] = 'Erstellt von: ';
+$lang['creator_name'] = 'Erstellt von: ';
 $lang['created_date'] = 'Datum: ';
 $lang['more'] = 'Mehr';
 

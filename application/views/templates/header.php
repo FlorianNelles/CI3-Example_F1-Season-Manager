@@ -64,7 +64,7 @@
 					</div>
 				</li>
 
-				<?php if(!$this->session->userdata('logged_in')):?>
+				<?php if(!$_SESSION['logged_in']):?>
 					<li class="nav-item active">
 						<a class="nav-link" href="<?php echo base_url(); ?>users/register"><?php echo $this->lang->line('user_create') ?><span class="sr-only">(current)</span></a>
 					</li>
@@ -73,8 +73,8 @@
 					</li>
 				<?php endif;?>
 
-				<?php if($this->session->userdata('logged_in')):?>
-					<a class="navbar-brand"><?php echo $this->lang->line('user_name') ?><?php echo $this->session->userdata('username');?></a>
+				<?php if($_SESSION['logged_in']):?>
+					<a class="navbar-brand"><?php echo $this->lang->line('user_name') ?><?php echo $_SESSION['username'];?></a>
 					<li class="nav-item active">
 						<a class="nav-link" href="<?php echo base_url(); ?>/users/logout"><?php echo $this->lang->line('logout') ?><span class="sr-only">(current)</span></a>
 					</li>
@@ -89,68 +89,68 @@
 	<div class = "container">
 
 		<!-- messages -->
-		<?php if($this->session->flashdata('user_registered')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+		<?php if(isset($_SESSION['user_registered'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['user_registered'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('driver_created')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('driver_created').'</p>'; ?>
+		<?php if(isset($_SESSION['driver_created'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['driver_created'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('driver_delete')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('driver_delete').'</p>'; ?>
+		<?php if(isset($_SESSION['driver_delete'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['driver_delete'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('driver_edit')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('driver_edit').'</p>'; ?>
+		<?php if(isset($_SESSION['driver_edit'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['driver_edit'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('team_created')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('team_created').'</p>'; ?>
+		<?php if(isset($_SESSION['team_created'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['team_created'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('team_edit')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('team_edit').'</p>'; ?>
+		<?php if(isset($_SESSION['team_edit'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['team_edit'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('team_delete')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('team_delete').'</p>'; ?>
+		<?php if(isset($_SESSION['team_delete'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['team_delete'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('post_created')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_created').'</p>'; ?>
+		<?php if(isset($_SESSION['post_created'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['post_created'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('post_edit')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_edit').'</p>'; ?>
+		<?php if(isset($_SESSION['post_edit'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['post_edit'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('post_delete')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_delete').'</p>'; ?>
+		<?php if(isset($_SESSION['post_delete'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['post_delete'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('user_loggedin')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
+		<?php if(isset($_SESSION['user_loggedin'])): ?>
+			<?php echo '<p class="alert alert-success">'.$_SESSION['user_loggedin'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('login_failed')): ?>
-			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
+		<?php if(isset($_SESSION['login_failed'])): ?>
+			<?php echo '<p class="alert alert-danger">'.$_SESSION['login_failed'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('user_loggedout')): ?>
-			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
+		<?php if(isset($_SESSION['user_loggedout'])): ?>
+			<?php echo '<p class="alert alert-danger">'.$_SESSION['user_loggedout'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('not_logged_in')): ?>
-			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('not_logged_in').'</p>'; ?>
+		<?php if(isset($_SESSION['not_logged_in'])): ?>
+			<?php echo '<p class="alert alert-danger">'.$_SESSION['not_logged_in'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('not_right_user')): ?>
-			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('not_right_user').'</p>'; ?>
+		<?php if(isset($_SESSION['not_right_user'])): ?>
+			<?php echo '<p class="alert alert-danger">'.$_SESSION['not_right_user'].'</p>'; ?>
 		<?php endif; ?>
 
-		<?php if($this->session->flashdata('not_admin')): ?>
-			<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('not_admin').'</p>'; ?>
+		<?php if(isset($_SESSION['not_admin'])): ?>
+			<?php echo '<p class="alert alert-danger">'.$_SESSION['not_admin'].'</p>'; ?>
 		<?php endif; ?>
 
 

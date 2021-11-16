@@ -34,17 +34,15 @@ class Posts extends CI_Controller{
 		$this->load->view('templates/footer');
 	}
 
-	public function view($id = NULL){
-		$data['post'] = $this->post_model->get_posts($id);
-		if(empty($data['post'])){
-			show_404();
-		}
-		$data['title'] = $data['post']['title'];
-		$data['users'] = $this->user_model->get_users();
-		$this->load->view('templates/header');
-		$this->load->view('posts/view', $data);
-		$this->load->view('templates/footer');
-	}
+    public function view($id = NULL){
+        $data['post'] = $this->post_model->get_posts($id);
+
+        $data['title'] = $data['post']['title'];
+        $data['users'] = $this->user_model->get_users();
+        $this->load->view('templates/header');
+        $this->load->view('posts/view', $data);
+        $this->load->view('templates/footer');
+    }
 
 	public function create(){
 		if (!$this->session->userdata('logged_in')){
@@ -81,8 +79,6 @@ class Posts extends CI_Controller{
 
 		$this->post_model->delete_post($id);
 
-
-
 		$this->session->set_flashdata('post_delete', $this->lang->line('post_delete'));
 		redirect('posts');
 	}
@@ -100,9 +96,6 @@ class Posts extends CI_Controller{
 			redirect('posts');
 		}
 
-		if(empty($data['post'])){
-			show_404();
-		}
 		$data['title'] = 'Nachricht bearbeiten';
 		$this->load->view('templates/header');
 		$this->load->view('posts/edit', $data);

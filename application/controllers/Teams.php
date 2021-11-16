@@ -26,9 +26,7 @@ class Teams extends CI_Controller{
 
 	public function view($id = NULL){
 		$data['team'] = $this->team_model->get_teams($id);
-		if(empty($data['team'])){
-			show_404();
-		}
+
 		$data['name'] = $data['team']['name'];
 		$data['drivers'] = $this->driver_model->get_drivers();
 		$this->load->view('templates/header');
@@ -78,9 +76,7 @@ class Teams extends CI_Controller{
 		}
 
 		$data['team'] = $this->team_model->get_teams($id);
-		if(empty($data['team'])){
-			show_404();
-		}
+
 		$data['title'] = 'Bearbeiten';
 
 		$this->load->view('templates/header');

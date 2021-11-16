@@ -27,9 +27,7 @@ class Drivers extends CI_Controller{
 
 	public function view($id = NULL){
 		$data['driver'] = $this->driver_model->get_drivers($id);
-		if(empty($data['driver'])){
-			show_404();
-		}
+
 		$data['id'] = $data['driver']['id'];
 		$data['teams'] = $this->team_model->get_teams();
 		$this->load->view('templates/header');
@@ -110,9 +108,6 @@ class Drivers extends CI_Controller{
 			redirect('drivers');
 		}
 
-		if(empty($data['driver'])){
-			show_404();
-		}
 		$data['title'] = 'Bearbeiten';
 
 		$data['teams'] = $this->team_model->get_teams();
@@ -152,7 +147,6 @@ class Drivers extends CI_Controller{
             $this->load->library('upload', $config);
 
             if(!$this->upload->do_upload()){
-                $errors = array('error' => $this->upload->display_errors());
                 $driver_image = $data['driver']['drivers_image'];
             } else {
                 $data = array('upload_data' => $this->upload->data());
